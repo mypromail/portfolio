@@ -1,0 +1,320 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+*{
+    border: 0em;
+    margin: 0em;
+    box-sizing: border-box;
+}
+
+
+a{
+    text-decoration: none; 
+    
+ }
+
+
+img{
+    max-width: 100%;
+    max-height: 70%;
+    display: flex;
+}
+
+body{
+    background-color: #000;
+}
+
+
+header{
+    
+    box-shadow: 0px 0.4px 7px 0px rgba(0,0,0,0.75);
+    width: 100%;
+    border-bottom: 1px solid #000;
+    display: flex;
+    padding: 0.1em 0;
+    background-color:#fff;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    
+}
+
+header img{
+    max-width: 150px;
+    max-height: 150px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    font-family: 'Fredericka the Great', cursive;
+    color:#fff;
+    
+}
+
+/*Section Home*/
+
+#Home{
+    padding:59px;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #000;
+}
+
+/*Campo Cadastro*/
+
+#cadastro{
+    position:absolute;
+    top: 300px;
+    right: 100px;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color:#000000;
+    border-radius: 30px;
+    padding:20px;
+    max-width: 500px;
+    
+}
+
+#cadastro label{
+    color:#000;
+}
+
+#divCadastro{
+    
+    text-align: center;
+    align-items: center;
+}
+
+#formCadastro{
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color:#000;
+    border-radius: 30px;
+    padding:20px;
+    max-width: 500px;
+    flex-direction: column;
+    border-top: 3px solid #7AF1C6;
+    border-bottom: 3px solid #7AF1C6;
+    border-radius: 0, 10, 10, 0;
+    padding: 60px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+#formCadastro h2{
+    margin-bottom: 40px;
+    font-family: 'Sedgwick Ave Display', cursive;
+    border-bottom:4px solid #7AF1C6;
+    border-radius: 0, 10, 10, 0;
+    
+}
+
+#formList{
+    display:flex;
+    flex-direction: row;
+}
+/*Button*/
+
+#buttonCadastro{
+   
+    display: inline-block;
+    padding: 15px 20px;
+    color:#000;
+    margin-top: 30px;
+    font-family:'open_sansbold';
+    text-decoration: none;
+    transition: 0.4s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border: 2px solid #7AF1C6;
+    border-radius:50px;
+    background-color: #fff;
+  }
+  #buttonCadastro:hover{
+    background: #7AF1C6;
+    color: #fff;
+    box-shadow: 0 0 10px #7AF1C6, 0 0 40px #7AF1C6, 0 0 70px #7AF1C6;
+    text-align: center;
+  }
+  #buttonCadastro:active{
+     color:#7AF1C6; 
+     background: #000000;
+  }
+
+  #buttonProximo{
+   
+    display: inline-block;
+    padding: 15px 20px;
+    color:#000;
+    margin-top: 30px;
+    font-family:'open_sansbold';
+    text-decoration: none;
+    transition: 0.4s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border: 2px solid #7AF1C6;
+    border-radius:50px;
+    background-color: #fff;
+  }
+  #buttonProximo:hover{
+    background: #7AF1C6;
+    color: #fff;
+    box-shadow: 0 0 10px #7AF1C6, 0 0 40px #7AF1C6, 0 0 70px #7AF1C6;
+    text-align: center;
+  }
+  #buttonProximo:active{
+     color:#7AF1C6; 
+     background: #000000;
+  }
+
+  #buttonReset{
+   
+    display: inline-block;
+    padding: 15px 20px;
+    color:#000;
+    margin-top: 30px;
+    font-family:'open_sansbold';
+    text-decoration: none;
+    transition: 0.4s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border: 2px solid #7AF1C6;
+    border-radius:50px;
+    background-color: #fff;
+  }
+  #buttonReset:hover{
+    background: #7AF1C6;
+    color: #fff;
+    box-shadow: 0 0 10px #7AF1C6, 0 0 40px #7AF1C6, 0 0 70px #7AF1C6;
+    text-align: center;
+  }
+  #buttonReset:active{
+     color:#7AF1C6; 
+     background: #000000;
+  }
+
+/*Input*/
+
+#CPF{
+    border: solid 1px #7AF1C6;
+    border-radius: 10px;
+    padding:3px;
+    margin:10px;
+    background-color: #00000000;
+    color:#000;
+    
+}
+#Nome{
+    border: solid 1px #7AF1C6;
+    border-radius: 10px;
+    padding:3px;
+    margin:10px;
+    background-color: #00000000;
+    color:#000;
+    
+}
+#dataNascimento{
+    border: solid 1px #7AF1C6;
+    margin:10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #00000000;
+    color:#000;
+}
+
+#NomeVacina{
+    border: solid 1px #7AF1C6;
+    border-radius: 10px;
+    padding:3px;
+    margin:10px;
+    background-color: #00000000;
+    color:#000;
+    
+}
+#dataVacina{
+    border: solid 1px #7AF1C6;
+    margin:10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #00000000;
+    color:#000;
+}
+#dataReforco{
+    border: solid 1px #7AF1C6;
+    margin:10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #00000000;
+    color:#000;
+}
+
+#inputsVacina {
+    max-width: 150px;
+    
+}
+
+/*ACOMPANHAMENTO*/
+
+#bodyAcompanhamento{
+    background-color: #fff;
+    display: flex;
+
+}
+#h1Acompanhamento{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Sedgwick Ave Display', cursive;
+    border-bottom:4px solid #7AF1C6;
+    border-radius: 0, 10, 10, 0;
+    max-width: 359px;
+    padding: 15px;
+    
+}
+
+#homeAcompanhamento{
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding-bottom: 35em;
+}
+
+#divAcompanhamento{
+    background-color: #fff;
+    border: solid 1px #000;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#acompanhamento{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+
+

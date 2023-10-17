@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="vacinaLogo.ico">
+    <script type="text/javascript" src="script.js"></script>
+    <title>PORTAL VACINA</title>
+
+</head>
+<body>
+
+    <!--HEADER-->
+    <header>
+        <!--LOGO-->
+        <img src="vacinaLogo.png" alt="Minha Figura">
+    </header>
+
+
+    <!--BANNER-->
+    <div id="banner">
+        <img src="banner1.png" alt="Minha Figura">
+    </div>
+    
+    <!--FORMULÁRIO CADASTRO ACIMA DO BANNER-->
+    <div id="cadastro">
+        <form id="formCadastro" method="get" onsubmit="return false;">
+            <!--H2-->
+            <h2>Cadastro</h2>
+            <div id="formList">
+            <div id="inputsPessoa">
+                <!--CPF-->
+                <label for="CPF">CPF</label>
+                <input type="text" id="CPF" name="CPF" minlength="14" maxlength="14" required/>
+
+                <!--Nome-->
+                <label for="Nome">Nome</label>
+                <input type="text" id="Nome" name="Nome" minlength="3" maxlength="25" required/>
+
+                <!--dataNascimento-->
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required/>
+            </div>
+            <div id="inputsVacina" style="display: none;">
+                <!--NomeVacina-->
+                <label for="NomeVacina">Nome da Vacina</label>
+                <input type="text" id="NomeVacina" name="NomeVacina" minlength="2" required/>
+                
+                <!--dataVacina-->
+                <label for="dataVacina" id="labelVacina">Data de Vacina</label>
+                <input type="date" id="dataVacina" name="dataVacina" required"/>
+            </div>
+
+            </div>
+            <!--BUTTONS-->
+            <div id="buttons">
+                <button type="submit" id="buttonCadastro" name="buttonCadastro" onclick="verificarData()" style="display: none;">Cadastrar</button>
+                <button id="buttonProximo" name="buttonProximo" onclick="verificarDataNasc()">Próximo</button>
+                <button type="reset" id="buttonReset" name="buttonReset" onclick="limparForm()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <section id="homeAcompanhamento">
+        <!--BODY H1-->
+        <h1 id="h1Acompanhamento">Acompanhamento de Vacinação</h1>
+        <div id="divAcompanhamento">
+        <p id="acompanhamento" style="padding:100px">Não há agendamentos</p>
+        </div>
+    </section>
+
+    <script>
+    //Formatar CPF
+    document.getElementById("CPF").addEventListener("input", function() {
+        let input = this;
+        let value = input.value.toString().replace(/\D/g, '');
+    
+        if (value.length > 3) {
+            value = value.substring(0, 3) + '.' + value.substring(3);
+        }
+        if (value.length > 7) {
+            value = value.substring(0, 7) + '.' + value.substring(7);
+        }
+        if (value.length > 11) {
+            value = value.substring(0, 11) + '-' + value.substring(11);
+        }
+    
+        input.value = value;
+    });
+
+    //Só para evitar o envio ao pressionar enter em um input e não ir sem informações...
+    document.getElementById('formCadastro').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+    }
+});
+
+//Verificar se Data Nascimento é maior que Hoje
+function verificarDataNasc() {
+  //Definindo Variaveis
+  const dataNasc = document.getElementById("dataNascimento").value;
+  const today = new Date();
+  const selectedDate = new Date(dataNasc);
+  
+  //Verifica se a Data selecionada é isNaN
+  if (isNaN(selectedDate)) {
+    alert("A data de nascimento não é válida.");
+    document.getElementById("dataNascimento").value = "";
+  } 
+  //Verifica se a Data selecionada é maior que Hoje
+  else if (selectedDate > today) {
+    alert("A data de nascimento inválida.");
+    document.getElementById("dataNascimento").value = "";
+  }
+  //Caso não entrar nas demais condições ele entra no cadastro da vacina
+  else{
+    proximo();
+  }
+}
+
+//Verificar se Data Vacina é menor que Hoje
+function verificarData() {
+  //Definindo Variaveis
+  const dataVacina = document.getElementById("dataVacina").value;
+  const today = new Date();
+  today.setDate(today.getDate() - 1);
+  const selectedDate = new Date(dataVacina);
+
+  //Verifica se a Data selecionada é isNaN
+  if (isNaN(selectedDate)) {
+    alert("A data da vacina não é válida.");
+    document.getElementById("dataVacina").value = "";
+  }
+  //Verifica se a Data selecionada é menor que Hoje 
+  else if (selectedDate < today) {
+    alert("A data da vacina não pode ser de ontem ou anterior.");
+    document.getElementById("dataVacina").value = "";
+  }
+  //Caso não entrar nas demais condições ele salva o cadastro
+  else{
+    salvarCadastro();
+  }
+}
+
+    </script>
+</body>
+</html>
